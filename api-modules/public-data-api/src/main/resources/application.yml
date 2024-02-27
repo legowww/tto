@@ -1,8 +1,0 @@
-public-data:
-  bus:
-    url: http://apis.data.go.kr/6280000/busArrivalService/getBusArrivalList
-    key: X4cMPRltQhalSiXM8QgHsuAOK1%2FasF494602CvtfRMOEOyTmY1h9UOxgzYax5T1oPy%2Bq1m9BtXlsHzznuJFxew%3D%3D
-
-  subway:
-    url: https://api.odsay.com/v1/api/subwayTimeTable
-    key: Qmn6U2M5L3CCbVN8qFLeOCoE4m7xcYqwHz31rjcejo4
