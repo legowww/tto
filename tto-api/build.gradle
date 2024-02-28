@@ -8,7 +8,9 @@ dependencies {
     runtimeOnly 'com.mysql:mysql-connector-j'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-    implementation project(':api-modules:odsay-api')
+    implementation project(':api-modules:route-api')
+    implementation project(':api-modules:bus-api')
+    implementation project(':api-modules:subway-api')
     implementation project(':tto-domain')
 }
 
