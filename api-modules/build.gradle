@@ -1,7 +1,5 @@
-//odsay-api, public-data-api 둘다 RestClient 사용하므로 추가
 subprojects {
 	dependencies {
-		implementation 'org.springframework.boot:spring-boot-starter-web'
 		testImplementation 'org.springframework.boot:spring-boot-starter-test'
 		implementation group: 'org.json', name: 'json', version: '20231013'
 
