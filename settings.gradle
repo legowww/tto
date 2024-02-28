@@ -1,5 +1,6 @@
 rootProject.name = 'tto'
 include 'tto-api'
 include 'tto-domain'
-include 'api-modules:odsay-api'
-include 'api-modules:public-data-api'
+include 'api-modules:route-api'
+include 'api-modules:bus-api'
+include 'api-modules:subway-api'
