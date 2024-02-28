@@ -1,16 +1,21 @@
-package com.tto.odsayapi.domain.route;
+package com.tto.routeapi.domain.route;
 
 import com.tto.ttodomain.route.Route;
 import com.tto.ttodomain.transportation.*;
+import com.tto.ttodomain.transportation.bus.Bus;
+import com.tto.ttodomain.transportation.subway.Subway;
+import com.tto.ttodomain.transportation.walk.Walk;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 @Component
-public class ODsayRouteMapper {
+public class ODsayRouteResponseMapper {
 
     public List<Route> execute(String response) {
         JSONObject json = new JSONObject(response);
@@ -72,6 +77,8 @@ public class ODsayRouteMapper {
             routes.add(new Route(totalTime, busTransitCount, subwayTransitCount, firstStartStation, lastEndStation, transportations));
         }
 
+        Collections.sort(routes, Comparator.comparingInt(Route::totalTime));
+
         return routes;
     }
 
@@ -82,26 +89,4 @@ public class ODsayRouteMapper {
             default -> TransportationType.WALK;
         };
     }
-
-//    public List<String> getFirstTransportation() {
-//        Integer walkTime = 0;
-//        for (int i = 0; i < transportationList.size(); ++i) {
-//            Transportation t = transportationList.get(i);
-//
-//            if (t.getTransportationType() == TransportationType.WALK) {
-//                walkTime += t.getTime();
-//            }
-//            else if (t.getTransportationType() == TransportationType.BUS) {
-//                Bus bus = (Bus) t;
-//
-//                return List.of(TransportationType.BUS.name(), bus.getStartLocalStationID(), bus.getRouteId(), walkTime.toString());
-//            }
-//            else if (t.getTransportationType() == TransportationType.SUBWAY) {
-//                Subway subway = (Subway) t;
-//
-//                return List.of(TransportationType.SUBWAY.name(), subway.getStartID(), subway.getWayCode(), walkTime.toString());
-//            }
-//        }
-//        throw new RuntimeException("only walk path");
-//    }
 }

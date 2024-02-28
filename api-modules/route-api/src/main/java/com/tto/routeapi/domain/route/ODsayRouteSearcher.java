@@ -1,4 +1,4 @@
-package com.tto.odsayapi.domain.route;
+package com.tto.routeapi.domain.route;
 
 
 import org.springframework.stereotype.Component;
@@ -8,7 +8,7 @@ import org.springframework.web.service.annotation.HttpExchange;
 
 @Component
 @HttpExchange
-public interface ODsayApiClient {
+public interface ODsayRouteSearcher {
 
     @GetExchange
     String find(@RequestParam String apiKey, @RequestParam String SX, @RequestParam String SY, @RequestParam String EX, @RequestParam String EY);
